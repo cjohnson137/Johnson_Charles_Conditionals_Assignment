@@ -9,19 +9,27 @@
 
 
     // Define Pay Variables
-var yourName;
-var payFrequency;
-var noHours;
-var perHour;
+var yourName;  // Name Variable
+var payFrequency; // Length of pay period
+var noHours;   // Hours worked variable
+var perHour;   // Amount user gets paid per hour
 
-var payWeekly;
-var payWeeklyTotal;
+var payWeekly;   // Weekly pay period variable
+var payWeeklyTotal;   // Weekly pay period variable 2
 
-var payBiWeekly;
-var payBiWeeklyTotal;
+var payBiWeekly;    // Bi Weekly pay period variable
+var payBiWeeklyTotal;   // Bi Weekly pay period variable 2
 
-var payMonthly;
-var payMonthlyTotal;
+var payMonthly;    // Monthly pay period variable
+var payMonthlyTotal;   // Monthly pay period variable 2
+
+var payValue;   // Overall Hours and Amount per hour variable
+var payValueTotal;  // Overall Hours and Amount per hour variable 2
+
+var textOutput1;
+var textOutput2;
+
+
 
 // Prompt Variables
 
@@ -30,7 +38,7 @@ var payMonthlyTotal;
 
         // alert("You need to enter a valid name.")
         yourName = prompt("What is your name?");
-    }  while (yourName == "")
+    }  while (yourName == "") // Validate empty string
 
 
 
@@ -38,61 +46,93 @@ var payMonthlyTotal;
 
     do {
 
-        noHours = prompt("Please enter the number of hours you worked for the pay period.");
+        noHours = prompt("Please enter the number of hours you worked for the pay period."); // Prompt Hours Worked
 
-    }  while (noHours == "")
+    }  while (noHours == "") // Validate empty string
 
-            if (payFrequency == "Weekly" || payFrequency == "Week" || payFrequency == "By the week") {
 
-                payWeekly = noHours * perHour;
-                payWeeklyTotal = payWeekly * 4;
 
+    do {
+
+       perHour = prompt("Please enter how much you make per hour.");  // Amount per hour prompt
+
+
+    }  while (perHour == "") // Validate empty string
 
 
 // Check that the pay does not contain an empty value.
 
     do {
 
-        perHour = prompt("Please enter your hourly pay? (Numbers only)");
+        payFrequency = prompt("Do you get paid Weekly, Bi-Weekly, or Monthly?");  // Length of pay period prompt
 
 
-    }  while (typeof perHour != "number")
+    }  while (payFrequency == "") // Validate empty string
 
 
-// Check that the pay period does not contain an empty string.
 
-                do {
+// Check that the pay period does not contain an empty string and type of check for specific values.
 
-                    payFrequency = prompt("Do you get paid Weekly, Bi-Weekly, or Monthly?");
+                if (payFrequency == "Weekly" || payFrequency == "Week" || payFrequency == "By the week") {  // Check for variations of pay frequency
 
-                }  while (payFrequency == "" )
+                    payWeekly = noHours * perHour;   // Calculate hours and amount per hour
+                    payWeeklyTotal = payWeekly * 4;   // Calculate a monthly total based on 4 weeks in a month
 
-                if (payFrequency == "Weekly" || payFrequency == "Week" || payFrequency == "By the week") {
+                    payValue = payWeekly;     //   Copy value into a single varible so that there or no issues in console output
+                    payValueTotal = payWeeklyTotal;     //   Copy value into a single varible so that there or no issues in console output
 
-                    payWeekly = noHours * perHour;
-                    payWeeklyTotal = payWeekly * 4;
 
-                } else if ("Bi-Weekly" || "BiWeekly" || "Bi" || "Twice A Week"){
+                } else if ("Bi-Weekly" || "BiWeekly" || "Bi" || "Twice A Week"){    // Check for variations of pay frequency
 
-                    payBiWeekly = noHours * perHour;
-                    payBiWeeklyTotal = payBiWeekly * 2;
 
-                } else if ("Monthly" || "Month" || "A Month"){
+                    payBiWeekly = noHours * perHour;    // Calculate hours and amount per hour
+                    payBiWeeklyTotal = payBiWeekly + payBiWeekly;   // Calculate a monthly total based on 4 weeks in a month
 
-                    payMonthly = noHours * perHour;
-                    payMonthlyTotal = payMonthly * 1;
+                    payValue = payBiWeekly; //   Copy value into a single varible so that there or no issues in console output
+                    payValueTotal = payBiWeeklyTotal; //   Copy value into a single varible so that there or no issues in console output
 
-                } else {
+
+                } else if ("Monthly" || "Month" || "A Month"){     // Check for variations of pay frequency
+
+
+                    payMonthly = noHours * perHour;    // Calculate hours and amount per hour
+                    payMonthlyTotal = payMonthly * 1;   // Calculate hours and amount per hour
+
+                    payValue = payMonthly; //   Copy value into a single varible so that there or no issues in console output
+                    payValueTotal = payMonthlyTotal; //   Copy value into a single varible so that there or no issues in console output
+
+                } else {   // Check for variations of pay frequency
+
+
+
+                    payFrequency = alert("I guess that you don't want to know how much you get paid.");   // Alert to let person that they didn't do it right
+
 
 
                 }
-            }
 
 
 
+if (payFrequency = "Weekly" || payFrequency = "Week"){    // Filter to provide a different output based on weekly, bi-weekly, or monthly pay period
+
+    //  If weekly then output either of these responese based on the amount of hours worked.
+    textOutput1 = (perHour >= 40 && payFrequency == Weekly) ? "Wow! You work extremely hard, keep up the great work." : "You job should give you a raise and more hours."
+
+} else {
+
+
+    // If Not weekly then output these either of these responses based on amount of hours worked.
+    textOutput1 = (perHour >= 80 && payFrequency != Weekly) ? "Wow! You work extremely hard, keep up the great work." : "You are working some nice hours."
+
+}
 
 // Console Output
 
-console.log(yourName);
-console.log(payWeekly);
+IF
+
+console.log("Howdy " + yourName);
+console.log("You work a total of " + noHours + " hours per " + payFrequency + " pay period." );
+console.log("You direct deposit will be $" + payValue + " before taxes.");
+console.log("You will make around $" + payValueTotal + " each month.");
+console.log(textOutput1);
 
