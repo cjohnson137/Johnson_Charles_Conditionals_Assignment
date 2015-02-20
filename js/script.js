@@ -78,8 +78,8 @@ var textOutput2;
                     payWeekly = noHours * perHour;   // Calculate hours and amount per hour
                     payWeeklyTotal = payWeekly * 4;   // Calculate a monthly total based on 4 weeks in a month
 
-                    payValue = payWeekly;     //   Copy value into a single varible so that there or no issues in console output
-                    payValueTotal = payWeeklyTotal;     //   Copy value into a single varible so that there or no issues in console output
+                    payValue = payWeekly;     //   Copy value into a single variable so that there or no issues in console output
+                    payValueTotal = payWeeklyTotal;     //   Copy value into a single variable so that there or no issues in console output
 
 
                 } else if ("Bi-Weekly" || "BiWeekly" || "Bi" || "Twice A Week"){    // Check for variations of pay frequency
@@ -88,8 +88,8 @@ var textOutput2;
                     payBiWeekly = noHours * perHour;    // Calculate hours and amount per hour
                     payBiWeeklyTotal = payBiWeekly + payBiWeekly;   // Calculate a monthly total based on 4 weeks in a month
 
-                    payValue = payBiWeekly; //   Copy value into a single varible so that there or no issues in console output
-                    payValueTotal = payBiWeeklyTotal; //   Copy value into a single varible so that there or no issues in console output
+                    payValue = payBiWeekly; //   Copy value into a single variable so that there or no issues in console output
+                    payValueTotal = payBiWeeklyTotal; //   Copy value into a single variable so that there or no issues in console output
 
 
                 } else if ("Monthly" || "Month" || "A Month"){     // Check for variations of pay frequency
@@ -98,8 +98,8 @@ var textOutput2;
                     payMonthly = noHours * perHour;    // Calculate hours and amount per hour
                     payMonthlyTotal = payMonthly * 1;   // Calculate hours and amount per hour
 
-                    payValue = payMonthly; //   Copy value into a single varible so that there or no issues in console output
-                    payValueTotal = payMonthlyTotal; //   Copy value into a single varible so that there or no issues in console output
+                    payValue = payMonthly; //   Copy value into a single variable so that there or no issues in console output
+                    payValueTotal = payMonthlyTotal; //   Copy value into a single variable so that there or no issues in console output
 
                 } else {   // Check for variations of pay frequency
 
@@ -113,9 +113,9 @@ var textOutput2;
 
 
 
-if (payFrequency = "Weekly" || payFrequency = "Week"){    // Filter to provide a different output based on weekly, bi-weekly, or monthly pay period
+if (payFrequency = "Weekly" ){    // Filter to provide a different output based on weekly, bi-weekly, or monthly pay period
 
-    //  If weekly then output either of these responese based on the amount of hours worked.
+    //  If weekly then output either of these response based on the amount of hours worked.
     textOutput1 = (perHour >= 40 && payFrequency == Weekly) ? "Wow! You work extremely hard, keep up the great work." : "You job should give you a raise and more hours."
 
 } else {
