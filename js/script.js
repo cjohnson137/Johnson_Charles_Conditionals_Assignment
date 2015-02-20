@@ -29,7 +29,9 @@ var payValueTotal;  // Overall Hours and Amount per hour variable 2
 var textOutput1;
 var textOutput2;
 
+var payFrequency1;
 
+var varTest = "testing";
 
 // Prompt Variables
 
@@ -70,10 +72,9 @@ var textOutput2;
     }  while (payFrequency == "") // Validate empty string
 
 
-
 // Check that the pay period does not contain an empty string and type of check for specific values.
 
-                if (payFrequency == "Weekly" || payFrequency == "Week" || payFrequency == "By the week") {  // Check for variations of pay frequency
+                if (payFrequency == "Weekly" ) {  // Check for variations of pay frequency
 
                     payWeekly = noHours * perHour;   // Calculate hours and amount per hour
                     payWeeklyTotal = payWeekly * 4;   // Calculate a monthly total based on 4 weeks in a month
@@ -81,6 +82,8 @@ var textOutput2;
                     payValue = payWeekly;     //   Copy value into a single variable so that there or no issues in console output
                     payValueTotal = payWeeklyTotal;     //   Copy value into a single variable so that there or no issues in console output
 
+                 //   varTest = "Test Week";
+                   // console.log(varTest);
 
                 } else if ("Bi-Weekly" || "BiWeekly" || "Bi" || "Twice A Week"){    // Check for variations of pay frequency
 
@@ -91,6 +94,8 @@ var textOutput2;
                     payValue = payBiWeekly; //   Copy value into a single variable so that there or no issues in console output
                     payValueTotal = payBiWeeklyTotal; //   Copy value into a single variable so that there or no issues in console output
 
+                 //   varTest = "Test Bi";
+                   // console.log(payFrequency);
 
                 } else if ("Monthly" || "Month" || "A Month"){     // Check for variations of pay frequency
 
@@ -100,6 +105,9 @@ var textOutput2;
 
                     payValue = payMonthly; //   Copy value into a single variable so that there or no issues in console output
                     payValueTotal = payMonthlyTotal; //   Copy value into a single variable so that there or no issues in console output
+
+                    //varTest = "Test Month";
+                  //  console.log(varTest);
 
                 } else {   // Check for variations of pay frequency
 
@@ -127,8 +135,7 @@ if (payFrequency = "Weekly" ){    // Filter to provide a different output based 
 }
 
 // Console Output
-
-IF
+console.log(payFrequency);
 
 console.log("Howdy " + yourName);
 console.log("You work a total of " + noHours + " hours per " + payFrequency + " pay period." );
